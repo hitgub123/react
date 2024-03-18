@@ -5,6 +5,6 @@ function IfElseCom({ name, flg }) {
     //   return <li>{name}</li>
     // }
   
-  return flg ? <li>{name + ' OK!!!'}</li> : null;
+  return  flg ? <li>{name + ' OK!!!'}</li> : null;
 }
 export default IfElseCom;
