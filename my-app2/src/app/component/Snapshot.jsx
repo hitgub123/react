@@ -5,16 +5,24 @@ function Snapshot() {
   return (
     <>
       <h1>{number}</h1>
-      <button onClick={() => {
+      <button onClick={() => {    //+1
         setNumber(number + 1);console.log(number) //0
         setNumber(number + 1);console.log(number) //0
+      }}>+1</button><hr/>
+      <button onClick={() => {    //+2
+        setNumber(num=>num+1);console.log(number) //0
+        setNumber(num=>num+1);console.log(number) //0
+      }}>+2</button><hr/>   
+        <button onClick={() => {    //+2
         setNumber(number + 1);console.log(number) //0
-      }}>+3_NG</button><hr/>
-      <button onClick={() => {
+        setNumber(number + 1); console.log(number) //0
         setNumber(num=>num+1);console.log(number) //0
+      }}>+2</button><hr/><hr/>
+      <button onClick={() => {    //+1
         setNumber(num=>num+1);console.log(number) //0
-        setNumber(num=>num+1);console.log(number) //0
-      }}>+3_OK</button>    
+        setNumber(num => num + 1); console.log(number) //0
+        setNumber(number + 1);console.log(number) //0
+      }}>+1</button><hr/>
     </>
   )
 }
