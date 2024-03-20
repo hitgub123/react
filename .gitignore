@@ -38,8 +38,8 @@ next-env.d.ts
 .eslintrc.json
 next.svg
 vercel.svg
-favicon.ico
-globals.css
+#favicon.ico
+#globals.css
 #layout.tsx
 #page.tsx
 next.config.mjs
