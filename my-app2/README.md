@@ -1,10 +1,10 @@
-#create nextjs project:
+create nextjs project:
 
 ```bash
     npx create-next-app@latest
 ```
 
-##start nextjs project:
+start nextjs project:
 
 ```bash
     npm run dev
