@@ -1,8 +1,9 @@
 create nextjs project:
-    npx create-next-app@latest
+npx create-next-app@latest
 
 start nextjs project:
-```bash
+
+````bash
     npm run dev
     # or
     yarn dev
@@ -14,7 +15,10 @@ in UseStateListAll.jsx
     <button onClick={()=>delArtist(artist.id)}>del</button>
         but sometimes onClick={()=>XXX} will raise a bug,so u need use onClick={XXX},
         i dont know why.
-```
+````
+
+vercel remove --safe my-app2
+
 lily1
 lily1
 lily1
