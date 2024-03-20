@@ -14,3 +14,8 @@ in UseStateListAll.jsx
     <button onClick={()=>delArtist(artist.id)}>del</button>
         but sometimes onClick={()=>XXX} will raise a bug,so u need use onClick={XXX},
         i dont know why.
+
+lily1
+lily1
+lily1
+lily1
