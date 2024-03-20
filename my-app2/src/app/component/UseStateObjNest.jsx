@@ -1,20 +1,17 @@
-'use client'
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
 
 export default function UseStateObjNest() {
   const [person, setPerson] = useState({
-    firstName: 'Barbara',
-    lastName: 'Hepworth',
-    profile: {
-      age:11,
-      email: 'bhepworth@sculpture.com'
-    },
+    firstName: "Barbara",
+    lastName: "Hepworth",
+    profile: { age: 11, email: "bhepworth@sculpture.com" },
   });
 
   function handleChange(e) {
     setPerson({
       ...person,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   }
 
@@ -23,7 +20,7 @@ export default function UseStateObjNest() {
       ...person,
       profile: {
         ...person.profile,
-        [e.target.name]: e.target.value
+        [e.target.name]: e.target.value,
       },
     });
   }
@@ -63,10 +60,8 @@ export default function UseStateObjNest() {
         />
       </label>
       <p>
-        {person.firstName}{' '}
-        {person.lastName}{' '}
-        {person.profile.age}{' years '}
-        ({person.profile.email})
+        {person.firstName} {person.lastName} {person.profile.age}
+        {" years "}({person.profile.email})
       </p>
     </>
   );
