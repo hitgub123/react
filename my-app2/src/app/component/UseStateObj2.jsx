@@ -1,17 +1,30 @@
 'use client'
 import { useState } from 'react';
 
-export default function UseStateObj2() {
+export default function UseStateObjNest() {
   const [person, setPerson] = useState({
     firstName: 'Barbara',
     lastName: 'Hepworth',
-    email: 'bhepworth@sculpture.com'
+    profile: {
+      age:11,
+      email: 'bhepworth@sculpture.com'
+    },
   });
 
   function handleChange(e) {
     setPerson({
       ...person,
       [e.target.name]: e.target.value
+    });
+  }
+
+  function handleChangeProfile(e) {
+    setPerson({
+      ...person,
+      profile: {
+        ...person.profile,
+        [e.target.name]: e.target.value
+      },
     });
   }
 
@@ -34,17 +47,26 @@ export default function UseStateObj2() {
         />
       </label>
       <label>
+        Age:
+        <input
+          name="age"
+          value={person.profile.age}
+          onChange={handleChangeProfile}
+        />
+      </label>
+      <label>
         Email:
         <input
           name="email"
-          value={person.email}
-          onChange={handleChange}
+          value={person.profile.email}
+          onChange={handleChangeProfile}
         />
       </label>
       <p>
         {person.firstName}{' '}
         {person.lastName}{' '}
-        ({person.email})
+        {person.profile.age}{' years '}
+        ({person.profile.email})
       </p>
     </>
   );
