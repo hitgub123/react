@@ -33,17 +33,17 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+#next-env.d.ts
 
-.eslintrc.json
-next.svg
-vercel.svg
+#.eslintrc.json
+#next.svg
+#vercel.svg
 #favicon.ico
 #globals.css
 #layout.tsx
 #page.tsx
-next.config.mjs
-package.json
-postcss.config.js
-tailwind.config.ts
-tsconfig.json
+#next.config.mjs
+#package.json
+#postcss.config.js
+#tailwind.config.ts
+#tsconfig.json
