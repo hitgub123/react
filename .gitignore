@@ -40,8 +40,8 @@ next.svg
 vercel.svg
 favicon.ico
 globals.css
-layout.tsx
-page.tsx
+#layout.tsx
+#page.tsx
 next.config.mjs
 package.json
 postcss.config.js
