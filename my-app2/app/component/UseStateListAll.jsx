@@ -14,8 +14,8 @@ export default function UseStateListAll() {
     setArtists(
       artists.map((a, i) => {
         if (idx !== i) return a;
-        //ok,but never use it because changing the value,
-        //if someone else use the value,it will lead to a bug
+        // ok,but never use it because changing the value,
+        // if someone else use the value,it will lead to a bug
         // a.name = a.name + "up!";
         // return a;
         return { ...a, name: a.name + "up!" }; //ok
