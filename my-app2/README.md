@@ -9,11 +9,7 @@ start nextjs project:
     # or
     yarn dev
 ```
-aa
-
-aa
-
-```xml
+```bash
 in UseStateListAll.jsx
     <button onClick={delArtist(artist.id)}>del</button>
         will call delArtist when the button is rendered,use next code to prevent it:
@@ -21,3 +17,5 @@ in UseStateListAll.jsx
         but sometimes onClick={()=>XXX} will raise a bug,so u need use onClick={XXX},
         i dont know why.
 ```
+
+vercel remove --safe my-app2
