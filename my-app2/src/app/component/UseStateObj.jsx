@@ -9,7 +9,7 @@ function UseStateObj() {
   return (
     <>
       <button onClick={modifyObj}>modify obj</button>
-      <p>{ obj.id + ' >>> ' + obj.name}</p>
+      <p>{obj.id}{' >>> '}{obj.name}</p>
     </>
   )
 }
