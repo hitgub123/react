@@ -48,7 +48,6 @@ export default function UseImmerList() {
 
   return (
     <>
-      <h1>Art Bucket List</h1>
       <h2>My list of art to see:</h2>
       <ItemList artworks={myList} onToggle={handleToggleMyList} />
       <h2>Your list of art to see:</h2>
