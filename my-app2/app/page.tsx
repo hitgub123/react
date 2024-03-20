@@ -12,6 +12,7 @@ import UseStateListAll from "./component/UseStateListAll";
 import UseStateListDel from "./component/UseStateListDel";
 import UseStateObj from "./component/UseStateObj";
 import UseStateObjNest from "./component/UseStateObjNest";
+import UseImmerList from "./component/UseImmerList";
 export default function Gallery1() {
   const title1 = "New My Lily()";
   const style1 = { color: "red" };
@@ -30,37 +31,65 @@ export default function Gallery1() {
         <li style={style1}>today is {formatDate(new Date())}</li>
         <li>Improve the spectrum technology</li>
       </ul>
-      <h1>##############################Gallery##############################</h1>
+      <h1>
+        ##############################Gallery##############################
+      </h1>
       <a href="https://nextjs.org">Next.js!</a>
       <Gallery person={js1} sex="female" />
 
-      <h1>##############################IfElseCom##############################</h1>
+      <h1>
+        ##############################IfElseCom##############################
+      </h1>
       <section>
         <ul>
           <IfElseCom name={"name1"} flg={true} />
           <IfElseCom name={"name2"} flg={false} />
         </ul>
       </section>
-      <h1>##############################ListCom##############################</h1>
+      <h1>
+        ##############################ListCom##############################
+      </h1>
       <ListCom exclude="c" />
-      <h1>##############################ToolBar##############################</h1>
+      <h1>
+        ##############################ToolBar##############################
+      </h1>
       <ToolBar />
-      <h1>##############################UseStateDemo1##############################</h1>
+      <h1>
+        ##############################UseStateDemo1##############################
+      </h1>
       <UseStateDemo1 />
-      <h1>##############################Snapshot##############################</h1>
+      <h1>
+        ##############################Snapshot##############################
+      </h1>
       <Snapshot />
-      <h1>##############################UseStateObj##############################</h1>
+      <h1>
+        ##############################UseStateObj##############################
+      </h1>
       <UseStateObj />
-      <h1>##############################UseStateObjNest##############################</h1>
+      <h1>
+        ##############################UseStateObjNest##############################
+      </h1>
       <UseStateObjNest />
-      <h1>##############################UseImmerObj##############################</h1>
+      <h1>
+        ##############################UseImmerObj##############################
+      </h1>
       <UseImmerObj />
-      <h1>##############################UseStateListAdd##############################</h1>
+      <h1>
+        ##############################UseStateListAdd##############################
+      </h1>
       <UseStateListAdd />
-      <h1>##############################UseStateListDel##############################</h1>
+      <h1>
+        ##############################UseStateListDel##############################
+      </h1>
       <UseStateListDel />
-      <h1>##############################UseStateListAll##############################</h1>
+      <h1>
+        ##############################UseStateListAll##############################
+      </h1>
       <UseStateListAll />
+      <h1>
+        ##############################UseImmerList##############################
+      </h1>
+      <UseImmerList />
     </>
   );
 }
