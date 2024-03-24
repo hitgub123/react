@@ -19,12 +19,13 @@ export default function Effect1() {
         ignore = true;
       };
     }, [url]);
-    return data;
+    // return data;
   }
 
   return (
     <>
-      <p>{useData(url)}</p>
+      <p>useData(url):{useData(url)}</p>
+      <p>data:{data}</p>
       <button onClick={() => setA(a + "1")}>modify a={a}</button>
     </>
   );

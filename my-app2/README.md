@@ -55,3 +55,6 @@ useEffect is async: seeing Effect2.jsx
     while running fetch(url),<p>{useData(url)}</p> shows the default value '666',
     after fetching,then running Data("application"),it shows 'application'
 ``` 
+
+if u want to set a link like <Link href="/abc">abc</Link>,u should create a directory /app/abc,
+and create a file named page.tsx in it
