@@ -22,6 +22,8 @@ import TestVariableChangeAfterRender from "./component/TestVariableChangeAfterRe
 import RefDom from "./component/RefDom";
 import RefDomCallback from "./component/RefDomCallback";
 import RefDomCallback2 from "./component/RefDomCallback2";
+import ForwardRef from "./component/ForwardRef";
+import Effect1 from "./component/Effect1";
 export default function Gallery1() {
   const title1 = "New My Lily()";
   const style1 = { color: "red" };
@@ -91,6 +93,10 @@ export default function Gallery1() {
       <RefDomCallback />
       <h1>################RefDomCallback2################</h1>
       <RefDomCallback2 />
+      <h1>################ForwardRef################</h1>
+      <ForwardRef />
+      <h1>################Effect1################</h1>
+      <Effect1 />
     </>
   );
 }

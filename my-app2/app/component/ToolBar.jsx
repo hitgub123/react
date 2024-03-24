@@ -11,8 +11,8 @@ function Button1({ callBack, children }) {
 function ToolBar() {
   return (
     <div>
-      <Button1 callBack={hello}> { "say hello"}</Button1> <br />
-      <Button1 callBack={world}>{ "say world"}</Button1> <br />
+      <Button1 callBack={hello}> say hello</Button1> <br />
+      <Button1 callBack={world}>{"say world"}</Button1> <br />
     </div>
   );
 }

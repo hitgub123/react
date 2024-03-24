@@ -36,3 +36,6 @@ use key to clear ur input(seeing ClearFormUsingKey3.jsx)
         <Counter person="key-name1" key={key1} />
         <button onClick={() => {setKey1(key1 + "1");}}>modify key1</button>
 ```
+
+u can use html component in react component by js script like document.getElementById,
+try to use useRef, and ref can be defined in html tag using variable name of callback function
