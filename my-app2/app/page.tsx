@@ -24,6 +24,7 @@ import RefDomCallback from "./component/RefDomCallback";
 import RefDomCallback2 from "./component/RefDomCallback2";
 import ForwardRef from "./component/ForwardRef";
 import Effect1 from "./component/Effect1";
+import Effect2UseMemo from "./component/Effect2UseMemo";
 export default function Gallery1() {
   const title1 = "New My Lily()";
   const style1 = { color: "red" };
@@ -97,6 +98,8 @@ export default function Gallery1() {
       <ForwardRef />
       <h1>################Effect1################</h1>
       <Effect1 />
+      <h1>################Effect2UseMemo################</h1>
+      <Effect2UseMemo />
     </>
   );
 }

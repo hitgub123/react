@@ -39,3 +39,12 @@ use key to clear ur input(seeing ClearFormUsingKey3.jsx)
 
 u can use html component in react component by js script like document.getElementById,
 try to use useRef, and ref can be defined in html tag using variable name of callback function
+
+useMemo: seeing Effect2UseMemo.jsx
+
+```bash
+    u can let c=func2(b) in ur component,
+    but function [func2] will be called even though a is not modified,
+    u can let c = useMemo(() => func2(b), [b]),
+    it makes that [func2(b)] is called only when b is modified
+```
