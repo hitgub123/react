@@ -5,10 +5,18 @@ import Accordion2 from "./component/Accordion2";
 import ClearFormUsingKey1 from "./component/ClearFormUsingKey1";
 import ClearFormUsingKey2 from "./component/ClearFormUsingKey2";
 import ClearFormUsingKey3 from "./component/ClearFormUsingKey3";
+import Effect1 from "./component/Effect1";
+import Effect2 from "./component/Effect2";
+import Effect2UseMemo from "./component/Effect2UseMemo";
+import ForwardRef from "./component/ForwardRef";
 import Gallery from "./component/Gallery";
 import IfElseCom from "./component/IfElseDemo";
 import ListCom from "./component/ListDemo";
-import Snapshot from "./component/Snapshot";
+import ModifyStateImmediatetly from "./component/ModifyStateImmediatetly";
+import RefDom from "./component/RefDom";
+import RefDomCallback from "./component/RefDomCallback";
+import RefDomCallback2 from "./component/RefDomCallback2";
+import TestVariableChangeAfterRender from "./component/TestVariableChangeAfterRender";
 import ToolBar from "./component/ToolBar";
 import UseImmerList from "./component/UseImmerList";
 import UseImmerObj from "./component/UseImmerObj";
@@ -18,13 +26,6 @@ import UseStateListAll from "./component/UseStateListAll";
 import UseStateListDel from "./component/UseStateListDel";
 import UseStateObj from "./component/UseStateObj";
 import UseStateObjNest from "./component/UseStateObjNest";
-import TestVariableChangeAfterRender from "./component/TestVariableChangeAfterRender";
-import RefDom from "./component/RefDom";
-import RefDomCallback from "./component/RefDomCallback";
-import RefDomCallback2 from "./component/RefDomCallback2";
-import ForwardRef from "./component/ForwardRef";
-import Effect1 from "./component/Effect1";
-import Effect2UseMemo from "./component/Effect2UseMemo";
 export default function Gallery1() {
   const title1 = "New My Lily()";
   const style1 = { color: "red" };
@@ -60,8 +61,8 @@ export default function Gallery1() {
       <ToolBar />
       <h1>################UseStateDemo1################</h1>
       <UseStateDemo1 />
-      <h1>################Snapshot################</h1>
-      <Snapshot />
+      <h1>################ModifyStateImmediatetly################</h1>
+      <ModifyStateImmediatetly />
       <h1>################UseStateObj################</h1>
       <UseStateObj />
       <h1>################UseStateObjNest################</h1>
@@ -98,6 +99,8 @@ export default function Gallery1() {
       <ForwardRef />
       <h1>################Effect1################</h1>
       <Effect1 />
+      <h1>################Effect2################</h1>
+      <Effect2 />
       <h1>################Effect2UseMemo################</h1>
       <Effect2UseMemo />
     </>

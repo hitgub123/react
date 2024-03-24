@@ -48,3 +48,10 @@ useMemo: seeing Effect2UseMemo.jsx
     u can let c = useMemo(() => func2(b), [b]),
     it makes that [func2(b)] is called only when b is modified
 ```
+
+useEffect is async: seeing Effect2.jsx
+
+```bash
+    while running fetch(url),<p>{useData(url)}</p> shows the default value '666',
+    after fetching,then running Data("application"),it shows 'application'
+``` 
