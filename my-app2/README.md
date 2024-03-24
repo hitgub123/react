@@ -23,6 +23,16 @@ in UseStateListAll.jsx
 
 remove vercel deploment multiply
 
-````bash
+```bash
     vercel remove --safe my-app2
-````
+```
+
+use key to clear ur input(seeing ClearFormUsingKey3.jsx)
+
+```bash
+    method1: switch components having different key
+        {isPlayerC ? (<Counter person="a" key="x" />) : (<Counter person="b" key="y" />)}
+    method2: modify key of ur component
+        <Counter person="key-name1" key={key1} />
+        <button onClick={() => {setKey1(key1 + "1");}}>modify key1</button>
+```
