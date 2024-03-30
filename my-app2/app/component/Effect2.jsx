@@ -1,6 +1,8 @@
 "use client";
+import axios from "axios";
 import { useEffect, useState } from "react";
-const url = "https://react.docschina.org/learn/you-might-not-need-an-effect";
+
+const url = "http://localhost:3001/scripts";
 
 export default function Effect1() {
   const [a, setA] = useState("a");
@@ -9,12 +11,14 @@ export default function Effect1() {
   function useData(url) {
     useEffect(() => {
       let ignore = false;
-      fetch(url).then(() => {
+      axios.get(url).then((res) => {
+        // console.log("Effect2 res: ", res.data);
         if (!ignore) {
-          setData("application");
+          // setData("application");
+          setData(res.data.dev);
         }
       });
-      console.log("data: ", data);
+      // console.log("data: ", data);
       return () => {
         ignore = true;
       };
