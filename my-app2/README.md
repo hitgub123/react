@@ -76,3 +76,4 @@
 无序列表：
 - aa
 - cc
+*斜体* **加粗** `行内代码/高亮1` $a=b^3$ H<sub>2</sub>O  X<sup>2</sup> ~~删除线~~ <u>下划线</u> <big>big</big> <small>small</small> <mark>高亮2</mark> 
