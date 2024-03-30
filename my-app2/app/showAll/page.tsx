@@ -4,6 +4,7 @@
 import Link from "next/link";
 import Accordion1 from "../component/Accordion1";
 import Accordion2 from "../component/Accordion2";
+import Children1 from "../component/Children1";
 import ClearFormUsingKey1 from "../component/ClearFormUsingKey1";
 import ClearFormUsingKey2 from "../component/ClearFormUsingKey2";
 import ClearFormUsingKey3 from "../component/ClearFormUsingKey3";
@@ -28,6 +29,7 @@ import UseStateListAll from "../component/UseStateListAll";
 import UseStateListDel from "../component/UseStateListDel";
 import UseStateObj from "../component/UseStateObj";
 import UseStateObjNest from "../component/UseStateObjNest";
+import UseHook from "../component/UseHook";
 
 export default function Page() {
   const title1 = "New My Lily()";
@@ -104,6 +106,10 @@ export default function Page() {
       <Effect2 />
       <h1>################Effect2UseMemo################</h1>
       <Effect2UseMemo />
+      <h1>################Children1################</h1>
+      <Children1 />
+      <h1>################UseHook################</h1>
+      <UseHook />
     </>
   );
 }

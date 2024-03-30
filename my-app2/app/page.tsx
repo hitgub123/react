@@ -33,6 +33,8 @@ import UseStateListAll from "./component/UseStateListAll";
 import UseStateListDel from "./component/UseStateListDel";
 import UseStateObj from "./component/UseStateObj";
 import UseStateObjNest from "./component/UseStateObjNest";
+import Children1 from "./component/Children1";
+import UseHook from "./component/UseHook";
 
 export default function showAllPage() {
   const title1 = "New My Lily()";
@@ -139,6 +141,12 @@ export default function showAllPage() {
               <li>
                 <ReactLink to="/UseStateObjNest">UseStateObjNest</ReactLink>
               </li>
+              <li>
+                <ReactLink to="/Children1">Children1</ReactLink>
+              </li>
+              <li>
+                <ReactLink to="/UseHook">UseHook</ReactLink>
+              </li>
             </ul>
           </nav>
 
@@ -207,6 +215,9 @@ export default function showAllPage() {
             <Route path="/UseStateListDel" element={<UseStateListDel />} />
             <Route path="/UseStateObj" element={<UseStateObj />} />
             <Route path="/UseStateObjNest" element={<UseStateObjNest />} />
+            <Route path="/UseStateObjNest" element={<UseStateObjNest />} />
+            <Route path="/Children1" element={<Children1 />} />
+            <Route path="/UseHook" element={<UseHook />} />
           </Routes>
         </div>
       </Router>
