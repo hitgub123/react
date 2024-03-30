@@ -1,6 +1,7 @@
 "use client";
 /* eslint react/no-unescaped-entities */
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   Link as ReactLink,
   Route,
@@ -9,6 +10,7 @@ import {
 } from "react-router-dom";
 import Accordion1 from "./component/Accordion1";
 import Accordion2 from "./component/Accordion2";
+import Children1 from "./component/Children1";
 import ClearFormUsingKey1 from "./component/ClearFormUsingKey1";
 import ClearFormUsingKey2 from "./component/ClearFormUsingKey2";
 import ClearFormUsingKey3 from "./component/ClearFormUsingKey3";
@@ -25,6 +27,7 @@ import RefDomCallback from "./component/RefDomCallback";
 import RefDomCallback2 from "./component/RefDomCallback2";
 import TestVariableChangeAfterRender from "./component/TestVariableChangeAfterRender";
 import ToolBar from "./component/ToolBar";
+import UseHook from "./component/UseHook";
 import UseImmerList from "./component/UseImmerList";
 import UseImmerObj from "./component/UseImmerObj";
 import UseStateDemo1 from "./component/UseStateDemo1";
@@ -33,19 +36,21 @@ import UseStateListAll from "./component/UseStateListAll";
 import UseStateListDel from "./component/UseStateListDel";
 import UseStateObj from "./component/UseStateObj";
 import UseStateObjNest from "./component/UseStateObjNest";
-import Children1 from "./component/Children1";
-import UseHook from "./component/UseHook";
 
-export default function showAllPage() {
+const ShowAllPage = () => {
   const title1 = "New My Lily()";
   const style1 = { color: "red" };
   const js1 = { name: "aaa", age: 11 };
+  const router = useRouter();
   function formatDate(date: number | Date | undefined) {
     return new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(date);
   }
   return (
     <>
-      <Link href="/showAll">GO to showAll Page</Link> <hr />
+      <Link href="/showAll">Go to showAll Page using next/link</Link> <hr />
+      <button type="button" onClick={() => router.push("/showAll")}>
+        Go to showAll Page using next/navigation
+      </button>
       <Router>
         <div>
           <nav>
@@ -223,4 +228,5 @@ export default function showAllPage() {
       </Router>
     </>
   );
-}
+};
+export default ShowAllPage;
