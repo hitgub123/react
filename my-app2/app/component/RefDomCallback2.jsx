@@ -5,8 +5,8 @@ import { useRef, useState } from "react";
 const ulStyle = {
   height: "auto",
   overflow: "hidden",
-  "overflow-x": "auto",
-  "white-space": "nowrap",
+  overflowX: "auto",
+  whiteSpace: "nowrap",
   width: "auto",
 };
 const liStyle = {
