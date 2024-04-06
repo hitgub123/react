@@ -1,0 +1,40 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "first": "lily",
+      "last": "L.",
+      "favorite": true,
+      "avatar": "https://placekitten.com/g/200/200",
+      "twitter": "twitter lily",
+      "notes": "lily notes"
+    },
+    {
+      "id": 2,
+      "first": "hikaru",
+      "last": "Akao",
+      "favorite": true,
+      "avatar": "https://placekitten.com/g/200/200",
+      "twitter": "twitter hikari",
+      "notes": "hikari notes"
+    },
+    {
+      "id": 3,
+      "favorite": false,
+      "avatar": "https://placekitten.com/g/200/200",
+      "twitter": "twitter??",
+      "notes": "Some notes"
+    },
+    {
+      "id": 4,
+      "first": "minase",
+      "avatar": "https://placekitten.com/g/200/200",
+      "twitter": "twitter minase",
+      "notes": "minase notes"
+    }
+  ],
+  "tv": [
+    { "id": 1, "name": "tokyo TV" },
+    { "id": 2, "name": "asahi TV" }
+  ]
+}
