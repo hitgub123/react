@@ -8,6 +8,7 @@ import Router, {
 } from "./common/router";
 import A, { actionA } from "./components/a";
 import Contact, { loader as contactLoader } from "./components/contact";
+import EditContact,{action as editAction} from "./components/edit";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -22,6 +23,12 @@ const router = createBrowserRouter([
         path: "contact/:contactId",
         element: <Contact />,
         loader: contactLoader,
+      },
+      {
+        path: "contact/:contactId/edit",
+        element: <EditContact />,
+        loader: contactLoader,
+        action: editAction,
       },
     ],
   },

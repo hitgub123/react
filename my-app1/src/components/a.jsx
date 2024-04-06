@@ -4,5 +4,5 @@ export async function actionA(request, params) {
 }
 
 export default function A() {
-  return <>aaa</>;
+  return <>aaa page</>;
 }

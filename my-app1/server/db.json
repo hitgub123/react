@@ -20,10 +20,7 @@
     },
     {
       "id": 3,
-      "favorite": false,
-      "avatar": "https://placekitten.com/g/200/200",
-      "twitter": "twitter??",
-      "notes": "Some notes"
+      "favorite": false
     },
     {
       "id": 4,

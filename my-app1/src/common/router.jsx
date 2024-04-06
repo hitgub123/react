@@ -1,4 +1,4 @@
-import { Form, Link, Outlet, useLoaderData } from "react-router-dom";
+import { Form, Link, Outlet, redirect, useLoaderData } from "react-router-dom";
 import { getContacts, getTvs } from "../data/db";
 
 export async function loader() {
@@ -8,10 +8,7 @@ export async function loader() {
 }
 
 export async function action(request, params) {
-  // let formData = await request.formData();
-  // let name = formData.get("name");
-  console.log('router action');
-  return null;
+  return redirect(`/a`);
 }
 
 export default function Router() {
@@ -22,7 +19,8 @@ export default function Router() {
       <div id="sidebar">
         <h1>React Router Contacts</h1>
         <div>
-          <Form method="post" action="/a">
+          {/* <Form method="post" action="/a"> */}
+          <Form method="post">
             <input type="text" name="name" defaultValue={tvs[0].name} />
             <button type="submit">New</button>
           </Form>
