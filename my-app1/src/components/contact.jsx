@@ -1,13 +1,40 @@
-import { Form, useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Form, useFetcher, useLoaderData } from "react-router-dom";
+
 import { getContact } from "../data/db";
 
 export async function loader({ params }) {
-  const contact = await getContact(params.contactId);
+  let contact;
+  try {
+    contact = await getContact(params.contactId);
+  } catch (e) {
+    console.log("await getContact Error");
+  }
+  if (!contact) {
+    throw new Response("", {
+      status: 404,
+      statusText: "Not Found Contact",
+    });
+  }
   return { contact: contact.data };
+}
+
+export async function action({ request, params }) {
+  let formData = await request.formData();
+  console.log("Contact action favorite:", formData.get("favorite"));
+  return null;
 }
 
 export default function Contact(props) {
   const { contact } = useLoaderData();
+  //useState(contact.favorite) does not work,should use useEffect
+  // const [favor, setFavor] = useState(contact.favorite);
+  const [favor, setFavor] = useState();
+  // console.log(contact, favor);
+
+  useEffect(() => {
+    setFavor(contact.favorite);
+  }, [contact.favorite, contact.id]);
 
   return (
     <div id="contact">
@@ -24,7 +51,8 @@ export default function Contact(props) {
           ) : (
             <i>No Name</i>
           )}{" "}
-          <Favorite contact={contact} />
+          {/* <Favorite contact={contact} /> */}
+          <Favorite favor={favor} cb={setFavor} />
         </h1>
 
         {contact.twitter && (
@@ -41,13 +69,7 @@ export default function Contact(props) {
           <Form action="edit">
             <button type="submit">Edit</button>
           </Form>
-          <Form
-            method="post"
-            action="destroy"
-            onSubmit={(event) => {
-              alert(999);
-            }}
-          >
+          <Form method="post" action="destroy">
             <button type="submit">Delete</button>
           </Form>
         </div>
@@ -56,17 +78,34 @@ export default function Contact(props) {
   );
 }
 
-function Favorite({ contact }) {
-  let favorite = contact.favorite;
+function Favorite(props) {
+  const fetcher = useFetcher();
+  console.log("favorite", props.favor);
+
   return (
-    <Form method="post">
+    <fetcher.Form method="post">
       <button
         name="favorite"
-        value={favorite ? "false" : "true"}
-        aria-label={favorite ? "Remove from favorites" : "Add to favorites"}
+        value={props.favor ? "false" : "true"}
+        onClick={() => props.cb(!props.favor)}
+        aria-label={props.favor ? "Remove from favorites" : "Add to favorites"}
       >
-        {favorite ? "★" : "☆"}
+        {props.favor ? "★" : "☆"}
       </button>
-    </Form>
+    </fetcher.Form>
   );
 }
+// function Favorite({ contact }) {
+//   let favorite = contact.favorite;
+//   return (
+//     <Form method="post">
+//       <button
+//         name="favorite"
+//         value={favorite ? "false" : "true"}
+//         aria-label={favorite ? "Remove from favorites" : "Add to favorites"}
+//       >
+//         {favorite ? "★" : "☆"}
+//       </button>
+//     </Form>
+//   );
+// }

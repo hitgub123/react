@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.active {
+  color: blueviolet;
+  font-weight: bold;
+}
+
+.loading {
+  color: yellowgreen;
+}
+
+#root {
+  display: flex;
+  border: 1px solid black;
+}
+
+#sidebar {
+  border: 1px solid black;
+  width: 40%;
+}
+
+#detail {
+  flex: 1;
+  border: 1px solid black;
+}

@@ -7,8 +7,12 @@ import Router, {
   loader as rootLoader,
 } from "./common/router";
 import A, { actionA } from "./components/a";
-import Contact, { loader as contactLoader } from "./components/contact";
-import EditContact,{action as editAction} from "./components/edit";
+import B from "./components/b";
+import Contact, {
+  action as contactAction,
+  loader as contactLoader,
+} from "./components/contact";
+import EditContact, { action as editAction } from "./components/edit";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -20,22 +24,36 @@ const router = createBrowserRouter([
     action: rootAction,
     children: [
       {
-        path: "contact/:contactId",
-        element: <Contact />,
-        loader: contactLoader,
-      },
-      {
-        path: "contact/:contactId/edit",
-        element: <EditContact />,
-        loader: contactLoader,
-        action: editAction,
+        //common errorElement for children routes
+        errorElement: <ErrorPage />,
+        children: [
+          { index: true, element: <A /> },
+          {
+            path: "contact/:contactId",
+            element: <Contact />,
+            // errorElement: <ErrorPage />,
+            loader: contactLoader,
+            action: contactAction,
+          },
+          {
+            path: "contact/:contactId/edit",
+            element: <EditContact />,
+            loader: contactLoader,
+            action: editAction,
+          },
+          {
+            path: "contact/:contactId/destroy",
+            element: <A />,
+            // errorElement: <ErrorPage />,
+            action: actionA,
+          },
+        ],
       },
     ],
   },
   {
-    path: "/a",
-    element: <A />,
-    action: actionA,
+    path: "/b",
+    element: <B />,
   },
 ]);
 

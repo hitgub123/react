@@ -1,27 +1,63 @@
-import { Form, Link, Outlet, redirect, useLoaderData } from "react-router-dom";
+import {
+  Form,
+  Link,
+  NavLink,
+  Outlet,
+  redirect,
+  useLoaderData,
+  useNavigation,
+  useSubmit,
+} from "react-router-dom";
 import { getContacts, getTvs } from "../data/db";
 
-export async function loader() {
+export async function loader({ request }) {
+  const url = new URL(request.url);
+  const q = url.searchParams.get("q");
+  console.log("root q=", q);
   const contacts = await getContacts();
   const tvs = await getTvs();
-  return { contacts: contacts.data, tvs: tvs.data };
+  return { contacts: contacts.data, tvs: tvs.data, q: q };
 }
 
-export async function action(request, params) {
-  return redirect(`/a`);
+export async function action() {
+  return redirect(`/b`);
 }
 
-export default function Router() {
-  const { contacts, tvs } = useLoaderData();
+export default function Root() {
+  const { contacts, tvs, q } = useLoaderData();
+  const navigation = useNavigation();
+  const doSubmit = useSubmit();
+  const searching =
+    navigation.location &&
+    new URLSearchParams(navigation.location.search).has("q");
 
   return (
     <>
       <div id="sidebar">
-        <h1>React Router Contacts</h1>
+        <h1>React Root Contacts</h1>
         <div>
           {/* <Form method="post" action="/a"> */}
+          <Form method="get">
+            <input
+              type="text"
+              name="q"
+              className={searching ? "loading" : ""}
+              defaultValue={q}
+              onChange={(event) => {
+                const isFirstSearch = q == null;
+                doSubmit(event.currentTarget.form, {
+                  replace: !isFirstSearch,
+                });
+              }}
+            />
+            <div
+              id="search-spinner"
+              aria-hidden
+              hidden={!searching} //添加hidden
+            />
+            <button type="submit">GET</button>
+          </Form>
           <Form method="post">
-            <input type="text" name="name" defaultValue={tvs[0].name} />
             <button type="submit">New</button>
           </Form>
         </div>
@@ -33,7 +69,12 @@ export default function Router() {
               </li>
               {contacts.map((contact) => (
                 <li key={contact.id}>
-                  <Link to={`contact/${contact.id}`}>
+                  <NavLink
+                    to={`contact/${contact.id}`}
+                    className={({ isActive, isPending }) =>
+                      isActive ? "active" : isPending ? "pending" : ""
+                    }
+                  >
                     {contact.first || contact.last ? (
                       <>
                         {contact.first} {contact.last}
@@ -42,7 +83,7 @@ export default function Router() {
                       <i>No Name</i>
                     )}{" "}
                     {contact.favorite && <span>★</span>}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
             </ul>
@@ -52,9 +93,13 @@ export default function Router() {
             </p>
           )}
         </nav>
-        <div id="detail">
-          <Outlet />
-        </div>
+        <div>{navigation.state}</div>
+      </div>
+      <div
+        id="detail"
+        className={navigation.state === "loading" ? "loading" : ""}
+      >
+        <Outlet context={{ q: q }} />
       </div>
     </>
   );
